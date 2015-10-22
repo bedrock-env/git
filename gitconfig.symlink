@@ -1,0 +1,63 @@
+[alias]
+        aa = add -A .
+      	st = status
+      	ci = commit
+      	co = checkout
+      	br = branch
+      	tip = log -1
+        cp = cherry-pick
+        put = push origin HEAD
+        fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+        squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+        doff = reset head^
+        ri = rebase --interactive
+        promote = !$BEDROCK_DIR/bin/git-promote
+        wtf     = !$BEDROCK_DIR/bin/git-wtf
+        rank-contributors = !$BEDROCK_DIR/bin/git-rank-contributors
+        count   = !git shortlog -sn
+        pruneremote = remote prune origin
+        tree = log --graph --oneline --decorate --color --all
+        tr = log --graph --oneline --decorate --color
+        unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
+        unpulled = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git fetch && git log HEAD..origin/$PROJ_BRANCH"
+        add-untracked = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
+        ln = log --pretty=format:'%Cblue%h %Cred* %C(yellow)%s'
+        reset-authors = commit --amend --reset-author -CHEAD
+        rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+        snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = auto
+        interactive = auto
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[merge]
+	      summary = true
+	      tool = opendiff
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 10
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to suppress warning message
+        default = tracking
+[branch]
+	    autosetupmerge = true
+        autosetuprebase = always
+[interactive]
+	    singlekey = true
+[url "https://github"]
+	    insteadOf = git://github
+[include]
+        path = ~/.gitconfig.local
+
