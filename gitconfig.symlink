@@ -4,7 +4,7 @@
       	ci = commit
       	co = checkout
       	br = branch
-      	tip = log -1
+      	tip = log -1 --show-signature
         cp = cherry-pick
         put = push origin HEAD
         fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
@@ -60,4 +60,3 @@
 	    insteadOf = git://github
 [include]
         path = ~/.gitconfig.local
-
