@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 #
 # Git
 #
@@ -6,7 +6,7 @@
 
 source "$BEDROCK_DIR/script/shared"
 
-if [ "$(uname -s)" == "Darwin" ]
+if [ "$(uname -s)" = "Darwin" ]
 then
   # Check for a Homebrew installed Git
   if [ `which git` != "/usr/local/bin/git" ];
@@ -19,7 +19,7 @@ fi
 if [ ! -f "$HOME/.gitconfig.local" ];
 then
   git_credential='cache'
-  if [ "$(uname -s)" == "Darwin" ]
+  if [ "$(uname -s)" = "Darwin" ]
   then
     git_credential='osxkeychain'
   fi
