@@ -1,0 +1,37 @@
+{
+  "author": "Ben Mills",
+  "platforms": {
+    "macos": {
+      "homebrew": {
+        "install_steps": [
+          {
+            "binary": "brew",
+            "command": "install git",
+            "runif": "[ `which git` != \"/usr/local/bin/git\" ]"
+          }
+        ],
+        "update_steps": [
+          {
+            "binary": "brew",
+            "command": "upgrade git"
+          }
+        ],
+        "post_install_messages": [
+          "Be sure to configure your name and email in the [user] section of $HOME/.gitconfig"
+        ]
+      },
+      "files": [
+        {
+          "source": "gitconfig",
+          "target": "$HOME/.gitconfig",
+          "operation": "copy"
+        },
+        {
+          "source": "gitignore",
+          "target": "~/.gitignore",
+          "operation": "copy"
+        }
+      ]
+    }
+  }
+}

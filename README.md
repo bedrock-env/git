@@ -1,13 +1,12 @@
 # git
 
-git is an extension for the [bedrock](https://github.com/bedrock-env/ack)
-project to install Git and provide it in the bedrock environment.
+git is an extension for the [Bedrock](https://github.com/bedrock-env/bedrock)
+project to install Git and provide it in the Bedrock environment.
 
 ### Provides
 
 - Installer for Git
-- Adds Git to ``PATH``
-- Assists in configuring git author and email for ``.gitconfig.local``
+- Adds a ``.gitconfig``
 - Adds a global ``.gitignore``
 - Provides aliases for common git commands
   - ``gl`` - ``git pull --prune``
@@ -26,20 +25,16 @@ project to install Git and provide it in the bedrock environment.
   - ``gnap`` - ``git add -N && git add -p``
   - ``gsb`` - ``gst -sb``
 
+
 ### Setup
 
-Clone this project to ``[BEDROCK_DIR]/extensions``. For example:
-
 ```sh
-cd ~/Development/bedrock/extensions
-git clone git@github.com:bedrock-env/chefdk.git
+git clone git@github.com:bedrock-env/git.git ~/.bedrock/extensions/git
 ```
 
-```sh
-cd ~/Development/bedrock
-./scripts/bootstrap
-```
+Update the Bedrock bundle.
 
-### Supported Systems
 
-Mac OS X
+### Supported Platforms
+
+- macOS
