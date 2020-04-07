@@ -32,6 +32,38 @@
           "operation": "copy"
         }
       ]
+    },
+    "ubuntu": {
+      "apt": {
+        "install_steps": [
+          {
+            "binary": "apt-get",
+            "command": "install git",
+            "runif": "[ `which git` != \"/usr/local/bin/git\" ]"
+          }
+        ],
+        "update_steps": [
+          {
+            "binary": "apt-get",
+            "command": "upgrade git"
+          }
+        ],
+        "post_install_messages": [
+          "Be sure to configure your name and email in the [user] section of $HOME/.gitconfig"
+        ]
+      },
+      "files": [
+        {
+          "source": "gitconfig",
+          "target": "$HOME/.gitconfig",
+          "operation": "copy"
+        },
+        {
+          "source": "gitignore",
+          "target": "~/.gitignore",
+          "operation": "copy"
+        }
+      ]
     }
   }
 }
