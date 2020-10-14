@@ -24,6 +24,11 @@
           "source": "gitignore",
           "target": "~/.gitignore",
           "operation": "copy"
+        },
+        {
+          "source": "vimbundles/git",
+          "target": "$HOME/.vimbundles/git",
+          "operation": "symlink"
         }
       ]
     },
