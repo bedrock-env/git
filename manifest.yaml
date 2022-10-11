@@ -1,0 +1,28 @@
+author:
+  name: Ben Mills
+  email: ben@unfiniti.com
+platforms:
+  - macos
+setup:
+  macos:
+    steps:
+    - name: Install Git
+      command: brew install git
+      runif: |-
+        [ "`which git`" != "/usr/local/bin/git" ]
+    - name: Configure files
+      files:
+      - source: gitconfig
+        target: $HOME/.gitconfig
+        operation: symlink
+      - source: gitconfig.local.example
+        target: $HOME/.gitconfig.local
+        operation: copy
+      - source: gitignore
+        target: ~/.gitignore
+        operation: symlink
+      - source: vimbundles/git
+        target: $HOME/.vimbundles/git
+        operation: symlink
+    install_notes: |-
+      Be sure to configure your name and email in the [user] section of $HOME/.gitconfig.local
