@@ -1,3 +1,13 @@
-[user]
-  user = YOUR NAME
-  email = YOUR EMAIL
+# [user]
+#   user = YOUR NAME
+#   email = YOUR EMAIL
+#   signingkey = YOUR GPG KEY ID
+
+# [core]
+#   editor = nvim
+
+# [merge]
+#   tool = vimdiff
+
+# [commit]
+#   gpgsign = true

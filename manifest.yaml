@@ -25,4 +25,4 @@ setup:
         target: $HOME/.vimbundles/git
         operation: symlink
     install_notes: |-
-      Be sure to configure your name and email in the [user] section of $HOME/.gitconfig.local
+      Set custom settings, including user and email, in $HOME/.gitconfig.local
